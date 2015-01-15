@@ -1,0 +1,33 @@
+/* CSS Document */
+
+*{margin:0;
+	padding:0;
+	}
+body{
+text-align:center;
+}
+.main{
+height:500px;
+width:100%;
+
+}
+.email{
+	margin-left:auto;
+	margin-right:auto;
+	font-family:"Î¢ÈíÑÅºÚ";
+	font-size:18px;
+}
+.password{
+	margin-left:auto;
+	margin-right:auto;
+	font-family:"Î¢ÈíÑÅºÚ";
+	font-size:18px;
+	margin-top:20px;
+
+}
+.submit{
+	width:50px;
+	height:20px;
+}
+.top{height:200px}
+.bottom{height:200px;}
