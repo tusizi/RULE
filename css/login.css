@@ -1,33 +1,26 @@
-/* CSS Document */
+.row 
+{
+	margin-top: 100px;
+}
 
-*{margin:0;
-	padding:0;
-	}
-body{
-text-align:center;
+.form-group
+{
+	margin-top: 50px;
+	padding-bottom: 10px;
 }
-.main{
-height:500px;
-width:100%;
 
+input.form-control
+{
+	width: 260px;
 }
-.email{
-	margin-left:auto;
-	margin-right:auto;
-	font-family:"Î¢ÈíÑÅºÚ";
-	font-size:18px;
-}
-.password{
-	margin-left:auto;
-	margin-right:auto;
-	font-family:"Î¢ÈíÑÅºÚ";
-	font-size:18px;
-	margin-top:20px;
 
+.login_btn
+{
+	margin-left: 170px;
 }
-.submit{
-	width:50px;
-	height:20px;
+
+.login_btn button
+{
+	margin-left: 40px;
 }
-.top{height:200px}
-.bottom{height:200px;}
+
