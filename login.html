@@ -4,6 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <title>尺的登陆页面</title>
 <link href="css/login.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" type="text/css" href="vendor/font-awesome-4.2.0/css/font-awesome.css">
 <script type="text/javascript" src="vendor/jquery/jquery-2.1.3.min.js"></script>
 <link href="vendor/bootstrap/css/bootstrap.css" type="text/css" rel="stylesheet" />
 <link href="vendor/bootstrap/css/bootstrap.min.css" type="text/css" rel="stylesheet" />
@@ -13,12 +14,12 @@
 
 <body>
 	<div class="container">
-		<div class="row">
+		<div class="row top">
 			<div class="col-md-6 ">
 				<img src="images/left.jpg" class="img-circle img-thumbnail">
 			</div><!-- 左面图片结束 -->
 				
-			<div class="col-md-6"><!-- 右面选项卡开始 -->
+			<div class="col-md-6 right"><!-- 右面选项卡开始 -->
 			<!-- Nav tabs -->
 				<ul class="nav nav-tabs" role="tablist" id="myTab">
 					<li role="presentation" class="active"><a href="#login" role="tab" data-toggle="tab">登录</a></li>
@@ -29,38 +30,45 @@
 					<div role="tabpanel" class="tab-pane fade in active" id="login">
 						<div class="form-group">
 							<label class="col-sm-3">用户名：</label>
-							<div class="col-sm-9"><input type="email" class="form-control"></div>
+							<div class="col-sm-9"><input type="email" class="form-control" placeholder="Enter usename"></div>
 						</div>
 						<div class="form-group">
 							<label class="col-sm-3">密码：</label>
-							<div class="col-sm-9"><input type="password" class="form-control"></div>
+							<div class="col-sm-9"><input type="password" class="form-control"placeholder="Enter password"></div>
 						</div>
-						<div class="form-group">
-							<label class="col-sm-3">确认密码：</label>
-							<div class="col-sm-9"><input type="password" class="form-control"></div>
-						</div><!-- 登录选项卡结束 -->
-					</div>		
+						<div class="form-a"><a href="">忘记密码</a></div>
+						<div class="form-group login_btn"><!-- button -->
+							<button type="button" class="btn btn-primary">登录</button>
+							
+						</div>						
+					</div><!-- 登录选项卡结束 -->		
 					<div role="tabpanel" class="tab-pane" id="profile"><!-- 注册选项卡开始 -->
 						<div class="form-group">
 							<label class="col-sm-3">用户名：</label>
-							<div class="col-sm-9"><input type="email" class="form-control"></div>
+							<div class="col-sm-9"><input type="email" class="form-control" placeholder="Enter usename"></div>
 						</div>
 						<div class="form-group">
 							<label class="col-sm-3">密码：</label>
-							<div class="col-sm-9"><input type="password" class="form-control"></div>
+							<div class="col-sm-9"><input type="password" class="form-control" placeholder="Enter password"></div>
 						</div>
 						<div class="form-group">
 							<label class="col-sm-3">确认密码：</label>
-							<div class="col-sm-9"><input type="password" class="form-control"></div>
+							<div class="col-sm-9"><input type="password" class="form-control" placeholder="Comfirm password"></div>
+						</div>
+						<div class="form-group login_btn"><!-- button -->
+							
+							<button type="button" class="btn btn-danger">注册</button>
 						</div>
 					</div>
 				</div>
-				<div class="form-group login_btn"><!-- button -->
-					<button type="button" class="btn btn-primary">µÇÂ½</button>
-					<button type="button" class="btn btn-danger">È¡Ïû</button>
-				</div>
 			</div>
 		</div>
+		<div class="row"><!-- yejiaokaishi -->
+			<div class="col-md-4"></div>
+			<div class="col-md-4 icp"><i class="fa fa-copyright"></i><span>2015 Rule jingICP<i class="fa fa-wifi"></i></span></div>
+			<div class="col-md-4"></div>
+		</div>
 	</div>
+
 </body>
 </html>
