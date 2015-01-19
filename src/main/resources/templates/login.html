@@ -1,0 +1,100 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>尺的登陆页面</title>
+    <link href="css/style.css" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" type="text/css" href="vendor/font-awesome-4.2.0/css/font-awesome.css"/>
+    <script type="text/javascript" src="vendor/jquery/jquery-2.1.3.min.js"></script>
+    <link href="vendor/bootstrap/css/bootstrap.css" type="text/css" rel="stylesheet"/>
+    <link href="vendor/bootstrap/css/bootstrap.min.css" type="text/css" rel="stylesheet"/>
+    <script src="vendor/bootstrap/js/bootstrap.js" type="text/javascript"></script>
+    <script src="vendor/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+</head>
+
+<body>
+<div class="container">
+    <div class="row top">
+        <div class="col-md-6 ">
+            <img src="images/left.jpg" class="img-circle img-thumbnail"/>
+        </div>
+        <!-- 左面图片结束 -->
+
+        <div class="col-md-6"><!-- 右面选项卡开始 -->
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Rule登录</h3>
+                </div>
+                <div class="panel-body">
+                    <!-- Nav tabs -->
+                    <ul class="nav nav-tabs" role="tablist" id="myTab">
+                        <li role="presentation" class="active"><a href="#login" role="tab" data-toggle="tab">登录</a></li>
+                        <li role="presentation"><a href="#profile" role="tab" data-toggle="tab">注册</a></li>
+                    </ul>
+                    <!-- 选项卡布局结束 -->
+
+                    <div class="tab-content">
+                        <div role="tabpanel" class="tab-pane fade in active" id="login">
+                            <form action="/user" method="post">
+                                <div class="form-group">
+                                    <label class="col-sm-3">用户名：</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" name="username" class="form-control"
+                                               placeholder="请输入用户名"/>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-sm-3">密码：</label>
+                                    <div class="col-sm-9">
+                                        <input type="password" name="password" class="form-control"
+                                               placeholder="请输入密码"/></div>
+                                </div>
+                                <div class="form-a"><a href="">忘记密码</a></div>
+                                <div class="form-group login_btn"><!-- button -->
+                                    <button type="submit" class="btn btn-primary">登录</button>
+
+                                </div>
+                            </form>
+                        </div>
+                        <!-- 登录选项卡结束 -->
+                        <div role="tabpanel" class="tab-pane" id="profile"><!-- 注册选项卡开始 -->
+                            <div class="form-group">
+                                <label class="col-sm-3">用户名：</label>
+
+                                <div class="col-sm-9"><input type="email" class="form-control" placeholder="请输入用户名"/>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-3">密码：</label>
+
+                                <div class="col-sm-9"><input type="password" class="form-control" placeholder="请输入密码"/>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-3">确认密码：</label>
+
+                                <div class="col-sm-9"><input type="password" class="form-control" placeholder="请确认密码"/>
+                                </div>
+                            </div>
+                            <div class="form-group login_btn"><!-- button -->
+
+                                <button type="button" class="btn btn-danger">注册</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="row"><!-- yejiaokaishi -->
+        <div class="col-md-4"></div>
+        <div class="col-md-4 icp"><i class="fa fa-copyright"></i><span>2015 Rule 隐私政策 服务条款 京ICP证080268号 <br/>京公网安备110108003898号</span>
+        </div>
+        <div class="col-md-4"></div>
+    </div>
+</div>
+
+</body>
+</html>
