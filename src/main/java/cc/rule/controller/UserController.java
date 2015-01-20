@@ -26,12 +26,13 @@ public class UserController {
         else
             return "login";
     }
-
+//注册
     @RequestMapping(value = "/reg", method = RequestMethod.POST)
     public String addReg(@RequestParam String username,
                          @RequestParam String password,
                          @RequestParam String rePassword,
                          Model model) {
+        model.addAttribute("page","reg");
         if (!password.equals(rePassword)) {
             model.addAttribute("error", "密码不一致");
             return "login";

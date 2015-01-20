@@ -1,6 +1,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <title>尺的登陆页面</title>
@@ -29,16 +29,18 @@
                 <div class="panel-body">
                     <!-- Nav tabs -->
                     <ul class="nav nav-tabs" role="tablist" id="myTab">
-                        <li role="presentation" class="active"><a href="#login" role="tab" data-toggle="tab">登录</a></li>
-                        <li role="presentation"><a href="#profile" role="tab" data-toggle="tab">注册</a></li>
+                        <li role="presentation" th:class="(${page}!='reg') ? 'active' : ''" ><a href="#login" role="tab" data-toggle="tab">登录</a></li>
+                        <li role="presentation" th:class="(${page}=='reg') ? 'active' : ''"><a href="#profile" role="tab" data-toggle="tab">注册</a></li>
                     </ul>
                     <!-- 选项卡布局结束 -->
 
                     <div class="tab-content">
-                        <div role="tabpanel" class="tab-pane fade in active" id="login">
+
+                        <div role="tabpanel" th:class="${page}!='reg' ? 'tab-pane fade in active' : 'tab-pane fade in '"  id="login">
                             <form action="/user" method="post">
                                 <div class="form-group">
                                     <label class="col-sm-3">用户名：</label>
+
                                     <div class="col-sm-9">
                                         <input type="text" name="username" class="form-control"
                                                placeholder="请输入用户名"/>
@@ -46,6 +48,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label class="col-sm-3">密码：</label>
+
                                     <div class="col-sm-9">
                                         <input type="password" name="password" class="form-control"
                                                placeholder="请输入密码"/></div>
@@ -53,29 +56,34 @@
                                 <div class="form-a"><a href="">忘记密码</a></div>
                                 <div class="form-group login_btn"><!-- button -->
                                     <button type="submit" class="btn btn-primary">登录</button>
-
                                 </div>
                             </form>
                         </div>
                         <!-- 登录选项卡结束 -->
-                        <div role="tabpanel" class="tab-pane" id="profile"><!-- 注册选项卡开始 -->
+                        <div role="tabpanel" th:class="${page}=='reg' ? 'tab-pane active' : 'tab-pane '" id="profile"><!-- 注册选项卡开始 -->
+                            <p th:if="${error != null}">
+                                <span th:text="${error}"></span></p>
+
                             <form action="/reg" method="post">
                                 <div class="form-group">
                                     <label class="col-sm-3">用户名：</label>
 
-                                    <div class="col-sm-9"><input type="text" name="username" class="form-control" placeholder="请输入用户名"/>
+                                    <div class="col-sm-9"><input type="text" name="username" class="form-control"
+                                                                 placeholder="请输入用户名"/>
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label class="col-sm-3">密码：</label>
 
-                                    <div class="col-sm-9"><input type="password" name="password" class="form-control" placeholder="请输入密码"/>
+                                    <div class="col-sm-9"><input type="password" name="password" class="form-control"
+                                                                 placeholder="请输入密码"/>
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label class="col-sm-3">确认密码：</label>
 
-                                    <div class="col-sm-9"><input type="password" name="rePassword" class="form-control" placeholder="请确认密码"/>
+                                    <div class="col-sm-9"><input type="password" name="rePassword" class="form-control"
+                                                                 placeholder="请确认密码"/>
                                     </div>
                                 </div>
                                 <div class="form-group login_btn"><!-- button -->
