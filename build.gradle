@@ -27,6 +27,8 @@ repositories {
 
 dependencies {
     compile("org.springframework.boot:spring-boot-starter-thymeleaf")
+    compile("org.springframework:spring-jdbc")
+    compile("com.h2database:h2")
     testCompile("junit:junit")
 }
 
