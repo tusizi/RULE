@@ -1,0 +1,1 @@
+create table user( username varchar(255), passworrd varchar(255));

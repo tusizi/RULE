@@ -1,0 +1,1 @@
+alter table user change passworrd password varchar(255);

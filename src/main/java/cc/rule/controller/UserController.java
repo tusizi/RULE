@@ -1,5 +1,6 @@
 package cc.rule.controller;
 
+import cc.rule.dao.UserDao;
 import cc.rule.model.User;
 import org.omg.CORBA.Request;
 import org.springframework.stereotype.Controller;
@@ -40,6 +41,11 @@ public class UserController {
             model.addAttribute("error", "用户已存在");
             return "login";
         }
+        User user = new User();
+        UserDao userDao = new UserDao();
+        user.setUsername(username);
+        user.setUsername(password);
+        userDao.insert(user);
         return "dashboard";
     }
 
