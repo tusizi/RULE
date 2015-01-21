@@ -1,26 +1,20 @@
 package cc.rule.db;
 
-        import java.sql.ResultSet;
-        import java.sql.SQLException;
-        import java.util.List;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.List;
 
-        import cc.rule.model.Customer;
-        import org.springframework.jdbc.core.JdbcTemplate;
-        import org.springframework.jdbc.core.RowMapper;
-        import org.springframework.jdbc.datasource.SimpleDriverDataSource;
+import cc.rule.model.Customer;
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.RowMapper;
+import org.springframework.jdbc.datasource.SimpleDriverDataSource;
 
 public class Application {
 
     public static void main(String args[]) {
-        // simple DS for test (not for production!)
-        SimpleDriverDataSource dataSource = new SimpleDriverDataSource();
-        dataSource.setDriverClass(org.h2.Driver.class);
-        dataSource.setUsername("sa");
-        dataSource.setUrl("jdbc:h2:mem");
-        dataSource.setPassword("");
 
-        JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
 
+        JdbcTemplate jdbcTemplate = new DBTemplate().getTemplate();
         System.out.println("Creating tables");
         jdbcTemplate.execute("drop table customers if exists");
         jdbcTemplate.execute("create table customers(" +
@@ -37,7 +31,7 @@ public class Application {
 
         System.out.println("Querying for customer records where first_name = 'Josh':");
         List<Customer> results = jdbcTemplate.query(
-                "select * from customers where first_name = ?", new Object[] { "Josh" },
+                "select * from customers where first_name = ?", new Object[]{"Josh"},
                 new RowMapper<Customer>() {
                     @Override
                     public Customer mapRow(ResultSet rs, int rowNum) throws SQLException {
