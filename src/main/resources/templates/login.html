@@ -54,6 +54,8 @@
                                                placeholder="请输入密码"/></div>
                                 </div>
                                 <div class="form-a"><a href="">忘记密码</a></div>
+                                <p th:class="error" if="${error != null}">
+                                    <span th:text="${error}"></span></p>
                                 <div class="form-group login_btn"><!-- button -->
                                     <button type="submit" class="btn btn-primary">登录</button>
                                 </div>

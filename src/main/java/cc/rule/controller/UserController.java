@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 /**
  * Created by tusizi on 2015/1/18.
  */
@@ -21,19 +23,34 @@ public class UserController {
     }
 
     @RequestMapping(value = "/user", method = RequestMethod.POST)
-    public String add(@RequestParam String username, @RequestParam String password) {
-        if (username.equals("admin") && password.equals("admin"))
-            return "dashboard";
-        else
+    public String login(@RequestParam String username,
+                        @RequestParam String password,
+                        Model model) {
+
+        User user = new User();
+        UserDao userDao = new UserDao();
+        List<User> query = userDao.query(username);
+        if (query.isEmpty())
+        {
+            model.addAttribute("error","用户名不存在");
             return "login";
+        }
+        else if (!password.equals(query.get(0).getPassword()))
+        {
+            model.addAttribute("error","密码错误");
+            return "login";
+        }
+        else
+        return "dashboard";
     }
-//注册
+
+    //注册
     @RequestMapping(value = "/reg", method = RequestMethod.POST)
     public String addReg(@RequestParam String username,
                          @RequestParam String password,
                          @RequestParam String rePassword,
                          Model model) {
-        model.addAttribute("page","reg");
+        model.addAttribute("page", "reg");//把reg存到page里，page是键 选项卡的跳转
         if (!password.equals(rePassword)) {
             model.addAttribute("error", "密码不一致");
             return "login";
@@ -44,7 +61,7 @@ public class UserController {
         User user = new User();
         UserDao userDao = new UserDao();
         user.setUsername(username);
-        user.setUsername(password);
+        user.setPassword(password);
         userDao.insert(user);
         return "dashboard";
     }
