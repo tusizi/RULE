@@ -37,7 +37,7 @@
                     <div class="tab-content">
 
                         <div role="tabpanel" th:class="${page}!='reg' ? 'tab-pane fade in active' : 'tab-pane fade in '"  id="login">
-                            <form action="/user" method="post">
+                            <form action="/user/login" method="post">
                                 <div class="form-group">
                                     <label class="col-sm-3">用户名：</label>
 
@@ -65,7 +65,7 @@
                         <div role="tabpanel" th:class="${page}=='reg' ? 'tab-pane active' : 'tab-pane '" id="profile"><!-- 注册选项卡开始 -->
 
 
-                            <form action="/reg" method="post">
+                            <form action="/user/reg" method="post">
                                 <div class="form-group">
                                     <label class="col-sm-3">用户名：</label>
 
