@@ -7,7 +7,7 @@ import org.thymeleaf.Template;
 /**
  * Created by tusizi on 2015/1/21.
  */
-public class DBTemplate {
+public class H2Template {
     public JdbcTemplate getTemplate(){
         // simple DS for test (not for production!)
         SimpleDriverDataSource dataSource = new SimpleDriverDataSource();

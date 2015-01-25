@@ -1,2 +1,9 @@
 out/
 build/
+.gradle/
+h2/
+
+Rule.iml
+Rule.ipr
+Rule.iws
+.idea/

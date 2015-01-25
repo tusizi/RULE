@@ -1,6 +1,6 @@
 package cc.rule.dao;
 
-import cc.rule.db.DBTemplate;
+import cc.rule.db.H2Template;
 import cc.rule.model.User;
 import org.springframework.dao.DataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -18,7 +18,7 @@ public class UserDao {
     JdbcTemplate jdbcTemplate;
 
     public UserDao() {
-        jdbcTemplate = new DBTemplate().getTemplate();
+        jdbcTemplate = new H2Template().getTemplate();
     }
 
     public void insert(User user) {
@@ -38,7 +38,9 @@ public class UserDao {
                     }
                 });
         return results;
-    }public List<User> query() {
+    }
+
+    public List<User> query() {
         List<User> results = jdbcTemplate.query(
                 "select * from user", new Object[]{},
                 new RowMapper<User>() {
@@ -50,7 +52,7 @@ public class UserDao {
         return results;
     }
 
-    public User find(String username){
+    public User find(String username) {
         User user = jdbcTemplate.query(
                 "select * from user where username = ?",
                 new String[]{username},

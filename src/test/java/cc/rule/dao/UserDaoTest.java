@@ -19,6 +19,5 @@ public class UserDaoTest {
         userDao.insert(new User());
         List<User> afterUsers = userDao.query();
         assertThat(afterUsers.size()-beforeUsers.size(), is(1));
-
     }
 }

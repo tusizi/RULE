@@ -4,18 +4,16 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
 
-import cc.rule.model.Customer;
 import cc.rule.model.User;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
-import org.springframework.jdbc.datasource.SimpleDriverDataSource;
 
 public class Application {
 
     public static void main(String args[]) {
 
 
-        JdbcTemplate jdbcTemplate = new DBTemplate().getTemplate();
+        JdbcTemplate jdbcTemplate = new H2Template().getTemplate();
 //        System.out.println("Creating tables");
 //        jdbcTemplate.execute("drop table customers if exists");
 //        jdbcTemplate.execute("create table customers(" +
